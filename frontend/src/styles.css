@@ -1,0 +1,175 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #050505;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+button,
+input,
+select {
+  color: inherit;
+  font: inherit;
+}
+
+button {
+  min-height: 30px;
+  border: 3px solid #050505;
+  border-radius: 0;
+  background: #ffffff;
+  padding: 2px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 #050505;
+}
+
+button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 #050505;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 42px 40px 36px;
+  border: 4px solid #050505;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 3px solid #050505;
+  padding-bottom: 10px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 38px);
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  gap: 56px 48px;
+  padding: 30px 8px 50px;
+  border-bottom: 3px solid #050505;
+}
+
+.product-card {
+  position: relative;
+  min-height: 130px;
+  border: 3px solid #050505;
+  padding: 20px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-checkbox {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
+.product-info {
+  text-align: center;
+  line-height: 1.22;
+}
+
+.product-info p {
+  margin: 0;
+}
+
+.product-form {
+  width: min(620px, 100%);
+  padding-top: 24px;
+}
+
+.product-form label {
+  display: grid;
+  grid-template-columns: 130px minmax(160px, 230px);
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.product-form input,
+.product-form select {
+  min-height: 24px;
+  border: 3px solid #050505;
+  border-radius: 0;
+  background: #ffffff;
+  padding: 2px 8px;
+}
+
+.type-row {
+  margin-top: 28px;
+}
+
+.attribute-panel {
+  margin-top: 28px;
+  min-height: 160px;
+  padding: 22px 18px;
+  background: #a6a6a6;
+}
+
+.attribute-panel p {
+  margin: 12px 0 0;
+  font-weight: 700;
+}
+
+.form-message {
+  width: min(460px, 100%);
+  margin: 0 0 18px;
+  border: 3px solid #050505;
+  padding: 10px 14px;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(170px, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .page {
+    padding: 24px 18px;
+  }
+
+  .page-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .actions {
+    gap: 14px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-inline: 0;
+  }
+
+  .product-form label {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
